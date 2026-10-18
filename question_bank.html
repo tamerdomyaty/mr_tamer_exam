@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بنك أسئلة البرمجة والذكاء الاصطناعي | مستر تامر المنسي</title><style>
+:root{--n:#12315f;--g:#e9b22b;--bg:#f2f6fb;--ok:#1f8f55;--no:#cf3a45}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:"Segoe UI",Tahoma,Arial,sans-serif;font-size:19px;line-height:1.8;color:#1d2a3d}
+header{background:linear-gradient(135deg,var(--n),#1f4b8c);color:#fff;text-align:center;padding:14px;border-bottom:5px solid var(--g)}
+header b{color:var(--g);font-size:1.45em}header small{display:block;direction:ltr;letter-spacing:1px}
+header a{display:inline-block;margin-top:6px;background:var(--g);color:var(--n);font-weight:700;text-decoration:none;padding:2px 16px;border-radius:30px;direction:ltr}
+main{max-width:820px;margin:auto;padding:14px}
+.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 4px 16px #12315f1f;margin:14px 0;border-top:5px solid var(--g)}
+h2{margin:0 0 8px;color:var(--n)}
+input,select,textarea{width:100%;font:inherit;padding:10px 14px;border:2px solid #b9c6dc;border-radius:12px;margin:6px 0 12px;background:#fff}
+textarea{min-height:130px}input:focus,textarea:focus{outline:0;border-color:var(--n)}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:10px 26px;background:var(--n);color:#fff;font-weight:700}
+button.gold{background:var(--g);color:var(--n)}button:disabled{opacity:.6;cursor:default}
+.bar{height:10px;background:#dbe4f2;border-radius:10px;overflow:hidden}.bar i{display:block;height:100%;background:var(--g);width:0;transition:.3s}
+.meta{display:flex;justify-content:space-between;gap:8px;color:#4d5f7e;font-size:.85em;margin:6px 0}
+.chip{background:var(--n);color:var(--g);border-radius:20px;padding:0 12px;font-size:.9em}
+.q{font-weight:700;font-size:1.1em;color:var(--n);margin:10px 0}
+.o{display:block;width:100%;text-align:right;background:#f6f8fc;color:#1d2a3d;border:2px solid #cfd9ea;margin:8px 0;font-weight:500}
+.o.ok{background:#e2f5ea;border-color:var(--ok)}.o.no{background:#fde8ea;border-color:var(--no)}
+.fb{display:none;padding:10px 14px;border-radius:12px;margin-top:10px}.fb.ok{display:block;background:#e2f5ea;color:#0f5a33}.fb.no{display:block;background:#fde8ea;color:#85202a}
+.fb li{margin:4px 0;list-style:none}
+.big{font-size:3em;font-weight:800;color:var(--n);text-align:center;direction:ltr}
+.row{display:flex;justify-content:space-between;border-bottom:1px dashed #cfd9ea;padding:4px 0}
+.wa{background:#f6f8fc;border-right:4px solid var(--g);padding:6px 10px;margin:8px 0;font-size:.85em;white-space:pre-wrap}
+.hide{display:none}footer{text-align:center;color:#4d5f7e;font-size:.85em;padding:14px}
+</style></head><body>
+<header><b>مستر تامر المنسي</b><small>Mr. Tamer Almansy</small>معلم أول أ برمجة وذكاء اصطناعي<br><a href="https://wa.me/201005415366" target="_blank">واتساب: 01005415366</a></header>
+<main>
+<div class="card" id="s1"><h2>بنك أسئلة البرمجة والذكاء الاصطناعي - أولى ثانوي</h2>
+<p>اكتب بياناتك لتظهر في صورة النتيجة، واختر الجزء الذي تريد التدرب عليه.</p>
+<label>الاسم</label><input id="nm" placeholder="اكتب اسمك الثلاثي"><label>الفصل</label><input id="cl" placeholder="مثال: 1/3">
+<label>الجزء</label><select id="sec"></select>
+<button class="gold" onclick="start()">ابدأ</button><p id="er" style="color:var(--no)"></p></div>
+<div class="card hide" id="s2"><div class="meta"><span id="pn"></span><span class="chip" id="lv"></span></div><div class="bar"><i id="pb"></i></div>
+<div class="q" id="qt"></div><div id="op"></div><div class="fb" id="fb"></div><p><button id="nx" class="hide" onclick="next()">التالي</button></p></div>
+<div class="card hide" id="s3"><h2 style="text-align:center">نتيجة الطالب</h2>
+<div class="row"><span>الاسم</span><b id="rn"></b></div><div class="row"><span>الفصل</span><b id="rc"></b></div><div class="row"><span>الجزء</span><b id="rp"></b></div><div class="row"><span>التاريخ</span><b id="rd"></b></div>
+<div class="big" id="rs"></div><p style="text-align:center;font-weight:700" id="rm"></p><div id="rb"></div>
+<h3 style="color:var(--n)">إجاباتي المقالية</h3><div id="rw"></div>
+<p style="font-size:.8em;color:#4d5f7e">درجة الأسئلة المقالية مبدئية (تُحسب من النقاط الأساسية في إجابتك) ويراجعها المعلم.</p>
+<p style="text-align:center;color:#4d5f7e">خد سكرين شوت لهذه الشاشة وابعتها لمستر تامر المنسي على واتساب 01005415366</p>
+<p style="text-align:center"><button onclick="location.reload()">بداية جديدة</button></p></div></main>
+<footer>مستر تامر المنسي | Mr. Tamer Almansy | واتساب 01005415366</footer>
+<script>
+const S=["المعلومات وأخلاقياتها","الملكية الفكرية","أمن المعلومات","وحدات القياس وأنظمة العد","ترميز الأحرف"];
+const M=(s,q,o,a,w)=>({s,t:"m",q,o,a,w,m:1}),
+T=(s,q,a,w)=>({s,t:"m",q:"صح أم خطأ؟ "+q,o:["صح","خطأ"],a:a?0:1,w,m:1}),
+C=(s,q,k,w)=>({s,t:"c",q,k,w,m:2}),W=(s,q,p)=>({s,t:"w",q,p,m:p.length});
+const D=[
+T(0,"المعلومات التي تُنشر على الإنترنت تنتشر بسهولة ولا تختفي بسهولة.",1,"لذلك يجب التفكير جيدًا قبل نشر أي معلومة أو صورة."),
+W(0,"وضح الفرق بين البيانات والمعلومات والمعرفة مع مثال.",[["البيانات حقائق خام (أرقام أو حروف أو رموز)",["حقائق","خام"]],["المعلومات ما يحمل معنى أو قيمة للمتلقي",["معنى","قيمة"]],["المعرفة تحليل وتنظيم المعلومات لحل المشكلات",["تحليل","تنظيم","حل"]],["مثال مناسب (مثل: 38 ← درجة الحرارة 38 ← قرار بارتداء ملابس خفيفة)",["مثل","مثال"]]]),
+W(0,"علل: يجب التفكير جيدًا قبل نشر أي صورة أو معلومة على الإنترنت.",[["لأن المعلومات تنتشر بسهولة",["تنتشر","انتشار","بسهولة"]],["ولا تختفي بسهولة حتى بعد حذفها",["تختفي","حذف","تبقى"]],["وقد تنتهك خصوصية أو حقوق الآخرين",["خصوصية","حقوق","اذن"]]]),
+M(1,"فترة حماية براءات الاختراع هي:",["7 سنوات","10 سنوات","20 سنة","50 سنة"],2,"براءة الاختراع تُحمى لمدة 20 سنة."),
+T(1,"حقوق النشر تثبت لحظة إنشاء العمل ولا تتطلب تسجيلًا رسميًا.",1,"تثبت للمبدع تلقائيًا بمجرد إنشاء العمل."),
+M(1,"أي ترخيص من تراخيص المشاع الإبداعي يسمح باستخدام العمل بشرط ذكر اسم المؤلف؟",["(NC) غير تجاري","(ND) لا مشتقات","(BY) نسبة الفضل للمبدع","(SA) نفس الشروط للتعديلات"],2,"BY = Attribution أي نسبة العمل إلى مبدعه."),
+W(1,"علل: عدم اشتراط التسجيل لتثبيت حقوق النشر عكس بعض حقوق الملكية الصناعية.",[["حقوق النشر تثبت للمبدع تلقائيًا بمجرد إنشاء العمل",["تلقائي","بمجرد","لحظة","انشاء"]],["الحماية مرتبطة بالعمل المبدع نفسه لا بإجراء التسجيل",["العمل","الابداع","الحماية"]],["أما براءات الاختراع والعلامات التجارية فيلزمها تسجيل رسمي",["براءات","علامات","براءة","علامة"]]]),
+W(1,"قارن بين براءات الاختراع والعلامات التجارية.",[["براءة الاختراع تحمي الاختراع (حل تقني جديد)",["اختراع","ابتكار","حل"]],["مدة حماية البراءة 20 سنة",["20","عشرين"]],["العلامة التجارية تميّز سلع وخدمات الشركة (اسم أو شعار)",["تميز","شعار","اسم"]]]),
+W(1,"علل: امتداد فترة حماية حقوق النشر لمدى حياة المبدع بالإضافة إلى 50 سنة بعد وفاته.",[["ليستفيد المبدع من ثمار إبداعه طوال حياته",["حياته","طوال","حياة"]],["ولتستفيد ورثته من العائد بعد وفاته",["ورثة","ورثت","اسرة","اهله"]],["تشجيعًا على الإبداع والابتكار",["تشجيع","ابداع","ابتكار","حفز"]]]),
+W(1,"وجدت ملف موسيقى محمي بحقوق النشر منشورًا مجانًا على موقع غير رسمي. ما الخطوات قبل إعادة نشره أو استخدامه؟",[["التأكد أن الموقع مصدر مصرح له بالنشر",["مصرح","رسمي","مصدر","موثوق"]],["الحصول على إذن أو ترخيص من صاحب الحقوق",["اذن","ترخيص","موافقة"]],["الالتزام بشروط الترخيص وذكر المبدع",["شروط","ذكر","نسب"]],["وإلا فلا يجوز النشر لأنه تعدٍّ على حقوق النشر",["لا يجوز","تعد","انتهاك","ممنوع"]]]),
+M(2,"أي من البرمجيات الخبيثة التالية تكرر نفسها وتنتشر عبر الإنترنت؟",["حصان طروادة","الدودة (Worm)","برامج التجسس","برامج الفدية"],1,"الدودة تنسخ نفسها وتنتشر عبر الشبكات دون حاجة لملف مضيف."),
+T(2,"برامج الفدية تُستخدم لحماية البيانات ومنع الفقد.",0,"برامج الفدية تشفّر ملفات الضحية وتطلب مبلغًا مقابل فك التشفير."),
+T(2,"هجوم التصيد الإلكتروني (Phishing) يعتمد دائمًا على استغلال ثغرات النظام دون التواصل مع المستخدم.",0,"التصيد يعتمد على خداع المستخدم برسائل أو روابط مزيفة (هندسة اجتماعية)."),
+M(2,"أي تقنية تطبق مبدأ «شيء تعرفه وشيء تملكه» لتعزيز أمان الحسابات؟",["برامج مكافحة الفيروسات","المصادقة ثنائية العوامل (2FA)","جدار الحماية (Firewall)","نظام التشفير التناظري"],1,"كلمة المرور (تعرفه) + رمز على هاتفك (تملكه)."),
+M(2,"الجهاز أو البرنامج الذي يعمل كحاجز أمني يراقب ويصفي حركة البيانات الصادرة والواردة للشبكة هو:",["الخادم السحابي","جدار الحماية (Firewall)","المحول (Switch)","المعالج (CPU)"],1,"جدار الحماية يسمح أو يمنع حركة البيانات وفق قواعد أمنية."),
+W(2,"اشرح كيف تتكامل عناصر أمن المعلومات: السرية والسلامة والتوافر.",[["السرية: منع الاطلاع على البيانات من غير المصرح لهم",["سرية","اطلاع","غير مصرح"]],["السلامة: بقاء البيانات صحيحة دون تعديل غير مصرح به",["سلامة","تعديل","تغيير","صحيحة"]],["التوافر: إتاحة البيانات للمصرح لهم وقت الحاجة",["توافر","اتاحة","متاح","وقت"]],["الحماية الكاملة لا تتحقق إلا باجتماع العناصر الثلاثة",["معا","اجتماع","تكامل","الثلاثة"]]]),
+W(2,"قارن بين هجمات حجب الخدمة (DoS) وحجب الخدمة الموزعة (DDoS) من حيث التنفيذ والتأثير على الخوادم.",[["DoS: ينفذ من جهاز أو مصدر واحد",["واحد"]],["DDoS: ينفذ من أجهزة كثيرة موزعة (غالبًا مخترقة)",["موزع","اجهزة","كثير","متعدد","botnet"]],["التأثير: إغراق الخادم بطلبات فيتوقف عن خدمة المستخدمين الشرعيين",["اغراق","طلبات","توقف","تعطل","حجب"]],["DDoS أصعب في الإيقاف وأشد تأثيرًا",["اصعب","اشد","اقوى","اكبر"]]]),
+W(2,"اشرح المقصود ببروتوكول HTTPS وكيف يحمي البيانات مقارنة بـ HTTP.",[["HTTPS نسخة آمنة من HTTP تعتمد التشفير",["تشفير","مشفر","امن","ssl","tls"]],["يشفّر البيانات المنقولة فلا يستطيع المتلصص قراءتها",["متلصص","قراءة","اعتراض","سرقة","غير مفهوم"]],["HTTP ينقل البيانات كنص صريح غير مشفر يمكن اعتراضه",["صريح","غير مشفر","بدون تشفير","عادي"]]]),
+W(2,"عرّف برمجيات الفدية (Ransomware) واذكر الخطوات التي تحد من مخاطرها قبل وقوع الاختراق.",[["برمجية خبيثة تشفّر ملفات الضحية وتطلب مبلغًا لفك التشفير",["تشفر","تقفل","فدية","مبلغ","ابتزاز"]],["عمل نسخ احتياطي دوري للبيانات",["نسخ","احتياطي","backup"]],["تحديث نظام التشغيل والبرامج",["تحديث"]],["عدم فتح روابط أو مرفقات مشبوهة واستخدام مضاد فيروسات",["روابط","مرفقات","مشبوه","مضاد"]]]),
+W(2,"اذكر مثالًا واقعيًا يوضح كيف تفرق بين رابط تصيد إلكتروني زائف ورابط آمن لموقع تعليمي رسمي.",[["فحص اسم الموقع (النطاق) والانتباه لأخطاء الإملاء أو الحروف المختلفة",["نطاق","دومين","اسم الموقع","املاء","عنوان","رابط"]],["التأكد من وجود HTTPS وقفل الأمان",["https","قفل","امن"]],["عدم إدخال كلمة المرور أو بيانات شخصية والتحقق من المرسل",["كلمة المرور","بيانات","مرسل","تحقق"]]]),
+M(3,"الترتيب التصاعدي الصحيح لوحدات قياس البيانات هو:",["TB ثم GB ثم MB ثم KB ثم Byte ثم Bit","Bit ثم Byte ثم KB ثم MB ثم GB ثم TB","Byte ثم Bit ثم KB ثم MB ثم GB ثم TB","Bit ثم KB ثم Byte ثم MB ثم GB ثم TB"],1,"أصغر وحدة Bit، وكل وحدة بعدها أكبر: Byte = 8 بت ثم KB ثم MB ثم GB ثم TB."),
+C(3,"ملف نصي يحتوي على 2048 حرفًا (كل حرف = 1 بايت). كم حجمه بالكيلوبايت (KB)؟ اكتب الرقم فقط.",["2","2KB"],"2048 بايت ÷ 1024 = 2 KB."),
+C(3,"كم عدد الاحتمالات المتاحة عند استخدام 4 بت؟ (القانون 2^n)",["16"],"2^4 = 2×2×2×2 = 16 احتمالًا."),
+C(3,"اكتب جميع الاحتمالات الثنائية الممكنة لـ 3 بت (مفصولة بمسافات).","set3","2^3 = 8 احتمالات."),
+C(3,"حوّل العدد العشري 13 إلى النظام الثنائي.",["1101","01101","00001101"],"13 ÷ 2 ← الباقي 1، 6 ← 0، 3 ← 1، 1 ← 1 وتُقرأ الباقي من الأسفل: 1101."),
+C(3,"احسب القيمة العشرية للعدد الثنائي (1011)₂.",["11"],"1×8 + 0×4 + 1×2 + 1×1 = 11."),
+C(3,"حوّل العدد الثنائي (11011011)₂ إلى النظام السادس عشر.",["DB"],"1101 = D و 1011 = B ← DB."),
+C(3,"حوّل العدد السادس عشر (5A)₁₆ إلى النظام العشري.",["90"],"5×16 + 10 = 90."),
+C(3,"حوّل العدد السادس عشر (E9)₁₆ إلى النظام الثنائي.",["11101001"],"E = 1110 و 9 = 1001 ← 11101001."),
+W(3,"اشرح خطوات التحويل من النظام الثنائي إلى النظام السادس عشر.",[["تقسيم الأرقام الثنائية من اليمين إلى مجموعات من 4 بت",["4","اربع","مجموعات"]],["تحويل كل مجموعة إلى رمز سادس عشر (0-9 و A-F)",["رمز","A","F","تحويل"]],["كتابة الرموز بجوار بعضها",["بجوار","نكتب","ترتيب","جانب"]]]),
+W(3,"علل: يعتمد النظام الثنائي على الرقمين 0 و 1 في الحاسب.",[["لأن الدوائر الإلكترونية تتعامل مع حالتين كهربائيتين",["حالتين","حالة","دوائر"]],["وجود جهد (1) أو عدم وجوده (0)",["جهد","فولت","تيار"]]]),
+M(4,"أي مما يلي يستوعب أنظمة الكتابة للبلدان في جميع أنحاء العالم؟",["ASCII","Unicode","Font","Character Code"],1,"Unicode نظام ترميز موحد لأنظمة الكتابة في العالم."),
+M(4,"أي من الآتي يختص فقط بالأحرف الأبجدية الرقمية الإنجليزية والرموز وأحرف التحكم؟",["Unicode","ASCII","Font","Encoding"],1,"ASCII محدود بالأحرف الإنجليزية والأرقام والرموز وأحرف التحكم."),
+M(4,"عدد أنواع الأحرف التي يمكن أن يمثلها 2 Byte هو:",["256","1,024","32,768","65,536"],3,"2 بايت = 16 بت ← 2^16 = 65,536."),
+T(4,"الخط (Font) هو نفسه رمز الحرف.",0,"الخط بيانات شكل الحرف على الشاشة، أما رمز الحرف فهو الرقم الذي يمثله."),
+C(4,"استخدم جدول رموز الأحرف لتمثيل الحرف M بالصيغة الثنائية (8 بت).",["01001101","1001101"],"M = 4D ← 0100 1101."),
+C(4,"استخدم النظام السادس عشر لتمثيل رمز الأحرف للكلمة MILK (اكتب الرموز بالترتيب).",["4D494C4B"],"M=4D و I=49 و L=4C و K=4B."),
+C(4,"ما رمز الحرف K في النظام السادس عشر؟",["4B"],"K يأتي بعد J (4A) فرمزه 4B."),
+W(4,"ما المقصود برمز الحرف (Character Code) ونظام رموز الأحرف (Character Code System)؟",[["رمز الحرف: الرقم أو الكود المخصص لكل حرف",["رقم","كود"]],["نظام رموز الأحرف: القاعدة أو الجدول الذي يحدد رمز كل حرف أو رمز",["قاعدة","جدول","نظام"]],["تمثل الأحرف داخل الحاسب بالنظام الثنائي أو السادس عشر",["ثنائي","سادس عشر","تمثيل","تخزين"]]]),
+W(4,"ما الفرق بين رمز الحرف (Character Code) والخط (Font)؟",[["رمز الحرف: رقم يحدده نظام الترميز ويخزنه الحاسب",["رقم","كود","يخزن"]],["الخط: بيانات شكل الحرف الذي يظهر على الشاشة",["شكل","مظهر","يظهر","رسم"]],["الحرف الواحد له رمز واحد وقد يظهر بخطوط مختلفة",["رمز واحد","نفس الرمز","خطوط","مختلف"]]]),
+W(4,"ما المقصود بكل من Encoding و Decoding وتلف الأحرف (Character Corruption)؟",[["Encoding: تحويل النص (سلسلة نصية) إلى رموز أحرف",["تحويل","نص","سلسلة"]],["Decoding: تحويل الرموز مرة أخرى إلى نص مقروء",["فك","مقروء","عكس","نص"]],["تلف الأحرف: ظهور رموز غير مفهومة عند فك الترميز بنظام مختلف",["غير مفهوم","تلف","مختلف","غريبة"]]]),
+W(4,"قارن بين ASCII و Unicode من حيث القدرة على تمثيل لغات العالم.",[["ASCII يمثل الأحرف الإنجليزية والأرقام والرموز وأحرف التحكم فقط",["انجليز","ارقام","رموز"]],["Unicode يستوعب أنظمة الكتابة للغات العالم المختلفة",["جميع","العالم","لغات","كل"]],["ASCII محدود العدد بينما Unicode أوسع بكثير",["محدود","اوسع","اكبر","128","256"]]])
+];
+const $=x=>document.getElementById(x);
+$("sec").innerHTML='<option value="all">كل البنك ('+D.length+' سؤالًا)</option>'+S.map((s,k)=>'<option value="'+k+'">'+s+' ('+D.filter(d=>d.s==k).length+')</option>').join("");
+const AD="٠١٢٣٤٥٦٧٨٩",nc=x=>x.replace(/[٠-٩]/g,d=>AD.indexOf(d)).replace(/[\s,،()\-_.]/g,"").toUpperCase(),
+nt=x=>x.replace(/[\u064B-\u065F\u0640]/g,"").replace(/[أإآ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/ئ/g,"ي").replace(/ؤ/g,"و").toLowerCase();
+let L=[],i=0,sc=0,tot=0,ss=[],st=[],rec=[];
+function start(){if(!$("nm").value.trim()||!$("cl").value.trim()){$("er").textContent="من فضلك اكتب الاسم والفصل.";return}
+const v=$("sec").value;L=v=="all"?D:D.filter(d=>d.s==v);ss=S.map(_=>0);st=S.map((_,k)=>L.filter(d=>d.s==k).reduce((a,d)=>a+d.m,0));tot=st.reduce((a,b)=>a+b,0);
+$("s1").classList.add("hide");$("s2").classList.remove("hide");show()}
+function show(){const d=L[i],o=$("op");$("pn").textContent="السؤال "+(i+1)+" من "+L.length;
+$("lv").textContent=S[d.s]+" | "+(d.t=="w"?"مقالي":d.t=="c"?"احسب واكتب الناتج":"اختيار")+" | "+d.m+" درجة";
+$("pb").style.width=(i/L.length*100)+"%";$("qt").textContent=d.q;$("fb").className="fb";$("nx").classList.add("hide");o.innerHTML="";
+if(d.t=="m")d.o.forEach((t,j)=>{const b=document.createElement("button");b.className="o";b.textContent=t;b.onclick=()=>pickM(j);o.appendChild(b)});
+else{const e=document.createElement(d.t=="c"?"input":"textarea");e.id="in";e.placeholder=d.t=="c"?"اكتب الناتج هنا":"اكتب إجابتك بأسلوبك (6 كلمات على الأقل)";if(d.t=="c")e.dir="ltr";o.appendChild(e);
+const b=document.createElement("button");b.className="gold";b.id="ck";b.textContent="تحقق من الإجابة";b.onclick=d.t=="c"?chkC:chkW;o.appendChild(b)}}
+function fin(g,ok,h){const d=L[i],f=$("fb");sc+=g;ss[d.s]+=g;f.className="fb "+(ok?"ok":"no");f.innerHTML=h;$("nx").textContent=i==L.length-1?"عرض النتيجة":"التالي";$("nx").classList.remove("hide")}
+function pickM(j){const d=L[i],bs=$("op").children;for(const b of bs)b.disabled=true;bs[d.a].classList.add("ok");const ok=j==d.a;if(!ok)bs[j].classList.add("no");
+fin(ok?1:0,ok,(ok?"✔ إجابة صحيحة. ":"✘ إجابتك غير صحيحة. الصحيح: «"+d.o[d.a]+"». ")+d.w)}
+function chkC(){const d=L[i],r=$("in"),v=nc(r.value);if(!v)return;r.disabled=$("ck").disabled=true;let ok;
+if(d.k=="set3"){const z=v.replace(/[^01]/g,"");ok=z.length==24&&new Set(z.match(/.{3}/g)).size==8}else ok=d.k.some(x=>nc(x)==v);
+fin(ok?2:0,ok,(ok?"✔ صحيح. ":"✘ غير صحيح. الناتج الصحيح: "+(d.k=="set3"?"000 001 010 011 100 101 110 111":d.k[0])+". ")+d.w)}
+function chkW(){const d=L[i],r=$("in"),x=r.value.trim();if(x.split(/\s+/).length<6){$("fb").className="fb no";$("fb").textContent="اكتب إجابة أوضح (6 كلمات على الأقل) ثم اضغط تحقق.";return}
+r.disabled=$("ck").disabled=true;const n=nt(x),h=d.p.map(p=>p[1].some(k=>n.includes(nt(k))));const g=h.filter(Boolean).length;
+rec.push({n:i+1,q:d.q,x,h,p:d.p,m:d.m});
+fin(g,g==d.m,"<b>حصلت على "+g+" من "+d.m+" درجة.</b> النقاط الأساسية للإجابة:<ul style='padding:0'>"+d.p.map((p,j)=>"<li>"+(h[j]?"✔ ":"✘ ")+p[0]+"</li>").join("")+"</ul>")}
+function next(){i++;if(i<L.length)show();else end()}
+function end(){$("s2").classList.add("hide");$("s3").classList.remove("hide");$("rn").textContent=$("nm").value.trim();$("rc").textContent=$("cl").value.trim();
+$("rp").textContent=$("sec").selectedOptions[0].textContent;$("rd").textContent=new Date().toLocaleString("ar-EG");$("rs").textContent=sc+" / "+tot;
+const p=sc/tot*100;$("rm").textContent=(p>=90?"ممتاز! ":p>=75?"جيد جدًا. ":p>=50?"جيد، راجع النقاط الناقصة. ":"محتاج مراجعة الدرس وإعادة المحاولة. ")+"النسبة "+Math.round(p)+"%";
+$("rb").innerHTML=S.map((s,k)=>st[k]?'<div class="row"><span>'+s+'</span><b>'+ss[k]+" / "+st[k]+"</b></div>":"").join("");
+rec.forEach(r=>{const e=document.createElement("div");e.className="wa";e.textContent="س"+r.n+") "+r.q+"\n"+r.x+"\nالنقاط: "+r.h.filter(Boolean).length+" / "+r.m;$("rw").appendChild(e)});
+if(!rec.length)$("rw").textContent="لا توجد أسئلة مقالية في هذا الجزء."}
+</script></body></html>
